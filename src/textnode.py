@@ -12,6 +12,8 @@ class TextNode:
 
     #compare with = is True when all properties match.
     def __eq__(self, other: Self) -> bool:
+        if type(other) != TextNode:
+            return False  
         if self.text is not other.text:
             return False
         if self.text_type is not other.text_type:
