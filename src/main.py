@@ -1,7 +1,8 @@
 from textnode import TextNode as tn
+from htmlnode import HTMLNode as hn
 
-#create new object of Type TextNode:
-dummy_tn = tn("This is a text node", "bold", "https://www.boot.dev")
+testnode = hn(None, None, None, {"href": "https://www.google.com", "target": "_blank"})
 
-#print to check __repr__ function:
-print(dummy_tn)
+print(testnode.props_to_html())
+
+print(testnode)

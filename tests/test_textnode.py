@@ -1,6 +1,7 @@
 import unittest
 
-from textnode import TextNode
+from src.textnode import TextNode
+
 
 class TestTextNode(unittest.TestCase):
     def test_eq(self):
@@ -12,7 +13,7 @@ class TestTextNode(unittest.TestCase):
         node = TextNode("This is a text node", "bold")
         node2 = TextNode("This is a different text node", "bold")
         self.assertNotEqual(node, node2)
-    
+
     def test_uneq_different_texttype(self):
         node = TextNode("This is a text node", "bold")
         node2 = TextNode("This is a text node", "italic")
@@ -27,6 +28,7 @@ class TestTextNode(unittest.TestCase):
         node = TextNode("This is a text node", "bold", "https://boot.dev")
         string = "This is a text node"
         self.assertNotEqual(node, string)
+
 
 if __name__ == "__main__":
     unittest.main()
