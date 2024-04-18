@@ -26,6 +26,20 @@ class HTMLNode:
             prop_to_html += f' {prop[0]}="{prop[1]}"'
         return prop_to_html
 
+    # compare with = is True when all properties match.
+    def __eq__(self, other: Self) -> bool:
+        if type(other) != type(self):
+            return False
+        if self.tag != other.tag:
+            return False
+        if self.value != other.value:
+            return False
+        if self.children != other.children:
+            return False
+        if self.props != other.props:
+            return False
+        return True
+
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}({self.tag}, {self.value}, {self.children}, {self.props})"
 

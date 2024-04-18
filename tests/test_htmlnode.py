@@ -62,7 +62,7 @@ class TestLeafNode(unittest.TestCase):
 # MARK: TestParentNode
 class TestParentNode(unittest.TestCase):
     # test unit example
-    def test_to_html_1(self):
+    def test_to_html_simple(self):
         node = ParentNode(
             "p",
             [
@@ -79,7 +79,7 @@ class TestParentNode(unittest.TestCase):
         self.assertEqual(actualResult, expectedString)
 
     # tests complicated setup, links, font awesome class import
-    def test_to_html_2(self):
+    def test_to_html_advanced(self):
         node = ParentNode(
             "div",
             [
@@ -102,7 +102,7 @@ class TestParentNode(unittest.TestCase):
         self.assertEqual(actualResult, expectedString)
 
     # tests deep linear recursion pattern
-    def test_to_html_3(self):
+    def test_to_html_deep_linear_recursion(self):
         node = ParentNode(
             "h1",
             [
@@ -138,7 +138,7 @@ class TestParentNode(unittest.TestCase):
         self.assertEqual(actualResult, expectedString)
 
     # tests recursion on later child positions, None as String, unordered lists, CSS style values in tag
-    def test_to_html_4(self):
+    def test_to_html_late_recursion(self):
         node = ParentNode(
             "div",
             [
